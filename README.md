@@ -1,3 +1,27 @@
+# Gas Sales Project Frontend
+
+This is the frontend for the Gas Sales Project, built with [Vite](https://vitejs.dev/) and [React](https://react.dev/).
+
+## Getting Started
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Project Structure
+- `src/` - Main source code (React components, styles, assets)
+- `public/` - Static assets
+
+## License
+MIT
+
+---
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
