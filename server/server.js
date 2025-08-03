@@ -12,7 +12,7 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error(err));
 
-const sellerRoutes = require('./routes/seller');
+const sellerRoutes = require('./routes/seller');//Imports seller-related routes from another file.
 app.use('/api/sellers', sellerRoutes);
 
 const PORT = process.env.PORT || 5000;

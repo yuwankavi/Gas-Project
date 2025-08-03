@@ -22,9 +22,6 @@ gas-sales-project/
 │   ├── server.js          # Main server file
 │   ├── package.json       # Backend dependencies
 │   └── .env              # Environment variables
-├── src/                   # Frontend (React)
-│   └── App.js            # Main React component
-├── package.json          # Frontend dependencies
 └── README.md            # This file
 ```
 

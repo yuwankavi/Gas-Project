@@ -1,3 +1,5 @@
+//the library used to define schemas 
+
 const mongoose = require('mongoose');
 
 const sellerSchema = new mongoose.Schema({
@@ -6,7 +8,7 @@ const sellerSchema = new mongoose.Schema({
   location: {
     type: {
       type: String, // 'Point'
-      enum: ['Point'],
+      enum: ['Point'],//when storing a geographic point
       required: true
     },
     coordinates: {
@@ -15,6 +17,8 @@ const sellerSchema = new mongoose.Schema({
     }
   }
 });
+
+//2D sphere model=> used to "Find all sellers within 5 km"
 
 sellerSchema.index({ location: '2dsphere' }); // For geospatial queries
 
