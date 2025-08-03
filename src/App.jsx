@@ -29,16 +29,18 @@ function App() {
 
   // Function to get user's current location using browser geolocation API
   const getLocation = () => {
-    // Check if geolocation is supported in the browser
+    // Check if geolocation is supported in the browser(provided by most modern browsers.)
     if ("geolocation" in navigator) {
       // Request user's current position
-      navigator.geolocation.getCurrentPosition(pos => {
-        const lat = pos.coords.latitude; // Extract latitude
-        const lng = pos.coords.longitude; // Extract longitude
+      navigator.geolocation.getCurrentPosition(pos => { //getCurrentPosition()=> used to Asks the user for permission to access their location 
+        //if it is success
+        //Inside the Success Callback
+        const lat = pos.coords.latitude; // Extract latitude(north-south).
+        const lng = pos.coords.longitude; // Extract longitude(east-west).
         setLocation({ lat, lng }); // Update location state
         console.log('User location obtained:', { lat, lng });
         fetchSellers(lat, lng); // Fetch sellers for this location
-      }, err => {
+      }, err => { //Error callback 
         // Handle geolocation errors (user denied permission, etc.)
         console.error('Geolocation error:', err);
         setError("Failed to get your location. Please allow location access.");
@@ -94,6 +96,7 @@ function App() {
       )}
 
       {/* Show message when no sellers are found */}
+      {/*sellers.length === 0=>The sellers array is empty */}
       {!loading && sellers.length === 0 && !error && (
         <div style={{ textAlign: 'center', padding: '2rem' }}>
           <p>No gas sellers found nearby. Try adding some sellers to the database first!</p>
